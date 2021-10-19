@@ -8,9 +8,7 @@ export class UserRepository extends DefaultCrudRepository<
   typeof User.prototype.email,
   UserRelations
 > {
-  constructor(
-    @inject('datasources.mongo_db') dataSource: MongoDbDataSource,
-  ) {
+  constructor(@inject('datasources.rethink') dataSource: MongoDbDataSource) {
     super(User, dataSource);
   }
 }
