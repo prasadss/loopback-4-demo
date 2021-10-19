@@ -1,6 +1,6 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
-import {MongoDbDataSource} from '../datasources';
+import {RethinkDataSource} from '../datasources';
 import {User, UserRelations} from '../models';
 
 export class UserRepository extends DefaultCrudRepository<
@@ -8,7 +8,7 @@ export class UserRepository extends DefaultCrudRepository<
   typeof User.prototype.email,
   UserRelations
 > {
-  constructor(@inject('datasources.rethink') dataSource: MongoDbDataSource) {
+  constructor(@inject('datasources.rethink') dataSource: RethinkDataSource) {
     super(User, dataSource);
   }
 }

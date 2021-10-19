@@ -5,10 +5,28 @@ export class Location extends Entity {
   @property({
     type: 'number',
     id: true,
-    generated: false,
+    generated: true,
     required: true,
   })
   id: number;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  username: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  location: string;
+
+  @property({
+    type: 'number',
+    required: true,
+  })
+  followers: string;
 
   // Define well-known properties here
 
